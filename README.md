@@ -1,3 +1,12 @@
+# Portien classfication
+
+## 前處理：
+
+先將所有不同蛋白質的class的pdb檔案，利用PDBformater.exe轉換成.dat檔案以符合FFSM讀入的形式
+![](https://i.imgur.com/0u2pDdw.png)
+
+P1為以FFSM演算法的執行檔，將所有的.dat檔案讀入得到各個子圖的code
+再取每個class 最長的code 來代表此class的最大子圖並存於"lcs_all_class_dict"，以python dictionary type儲存。
 ## 執行（分類）
 :::info
 Input: a.dat
