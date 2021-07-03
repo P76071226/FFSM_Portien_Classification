@@ -14,7 +14,7 @@ Output: *class name*, *longest common string*
 :::
 
 以"workflow.sh"為執行腳本
-進到工作目錄後使用
+進到工作目錄(/input)後使用
 ```
 $./workflow.sh a.dat
 ```
