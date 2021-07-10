@@ -32,7 +32,7 @@ $time ./workflow.sh a.dat
 輸出檔名`exp_result.csv`
 
 1. `cd exp`
-2. `python3 run_exp.py a.dat`
+2. `python3 run_exp.py`
 
 
 ## 執行說明：
