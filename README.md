@@ -1,31 +1,34 @@
 # Portien classfication
 
-## 前處理：
+## 建置環境
+1. `make`
+2. `g++ -o PDBformater.o PDBformater.cpp`
 
-先將所有不同蛋白質的class的pdb檔案，利用PDBformater.exe轉換成.dat檔案以符合FFSM讀入的形式
-![](https://i.imgur.com/0u2pDdw.png)
+## 前處理：
+先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式
+![](figs/1.png)
 
 P1為以FFSM演算法的執行檔，將所有的.dat檔案讀入得到各個子圖的code
 再取每個class 最長的code 來代表此class的最大子圖並存於"lcs_all_class_dict"，以python dictionary type儲存。
 ## 執行（分類）
-:::info
 Input: a.dat
 Output: *class name*, *longest common string*
-:::
 
 以"workflow.sh"為執行腳本
-進到工作目錄(/input)後使用
-```
-$./workflow.sh a.dat
-```
-即可得到所屬於的class以及代表最大子圖的code
-![](https://i.imgur.com/nUFawCn.png)
+進到工作目錄(/exp)後使用
 
-### Time measurement
+1. `cd exp`
+2. `./workflow.sh a.dat`
+
+即可得到所屬於的class以及代表最大子圖的code
+
+### 測量單次執行時間
 ```
 $time ./workflow.sh a.dat
 ```
-![](https://i.imgur.com/0anHDNt.png)
+
+## 實驗
+To be updated.
 
 
 ## 執行說明：

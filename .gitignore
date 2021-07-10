@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+input/__pycache__/
+P1
