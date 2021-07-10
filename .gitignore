@@ -30,5 +30,8 @@
 *.exe
 *.out
 *.app
-input/__pycache__/
+
+
+__pycache__/
 P1
+subgraph.txt

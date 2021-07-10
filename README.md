@@ -28,13 +28,18 @@ $time ./workflow.sh a.dat
 ```
 
 ## 實驗
-To be updated.
+輸出class平均時間 與 預測準確度
+輸出檔名`exp_result.csv`
+
+1. `cd exp`
+2. `python3 run_exp.py a.dat`
 
 
 ## 執行說明：
 一開始會先將a.dat依同樣的方式取得各個子圖的code存於"subgraph.txt"
 在"classify.py"，將前者最長的code和在“lcs_all_class_dict"各個代表class的最長code，利用LCS演算法取得最大的子圖(longest code)和所在的類別
 
+## Statement
 
 modify with [https://github.com/ChristalC/Frequent-Subgraph-Mining](https://github.com/ChristalC/Frequent-Subgraph-Mining)
 
