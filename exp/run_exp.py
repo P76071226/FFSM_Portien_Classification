@@ -9,8 +9,6 @@ OUTPUT_FILE = 'exp_result.csv'
 if __name__ == '__main__':
     csv_row = [['class', 'time', 'acc']]
     for cls_ in os.listdir(DATA_PATH):
-        if cls_ != 'serine':
-            continue
         m = Measure()
         for dat in os.listdir(os.path.join(DATA_PATH, cls_)):
             print('Classifying %s ...' % os.path.join(DATA_PATH, cls_, dat))
