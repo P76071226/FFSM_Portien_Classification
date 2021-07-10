@@ -30,7 +30,7 @@ def flow(inpdb):
     }
     truth = ''
     for key in mapping:
-        if sys.argv[1] in mapping[key]:
+        if os.path.basename(inpdb) in mapping[key]:
             truth = key
 
     os.remove('subgraph.txt')

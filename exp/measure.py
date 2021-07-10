@@ -12,6 +12,7 @@ class Measure:
         end_time = time.time()
         self.times.append(end_time - start_time)
         self.corrects.append(vals[0] == vals[1])
+        return vals
 
     def avg_time(self):
         return sum(self.times) / len(self.times)
