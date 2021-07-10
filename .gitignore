@@ -35,3 +35,4 @@
 __pycache__/
 P1
 subgraph.txt
+*.csv
