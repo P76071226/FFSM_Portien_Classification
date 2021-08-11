@@ -1,0 +1,13 @@
+# minsup
+1
+# graph
+G_portein_file\Histone\5B32.pdb
+# node ID, label
+0 A
+1 G
+2 I
+3 L
+# node ID1, node ID2, number of bounds
+2 0 1
+3 0 1
+3 2 1

@@ -1,0 +1,42 @@
+# minsup
+1
+# graph
+G_portein_file\FKBP\1P5Q.pdb
+# node ID, label
+0 A
+1 A
+2 A
+3 D
+4 E
+5 E
+6 E
+7 E
+8 E
+9 G
+10 G
+11 G
+12 G
+13 K
+14 L
+15 R
+16 R
+17 V
+18 Y
+19 Y
+# node ID1, node ID2, number of bounds
+5 3 1
+6 3 1
+6 5 1
+9 4 1
+11 3 1
+11 5 1
+11 6 1
+12 8 1
+13 1 1
+16 7 1
+17 8 1
+17 12 1
+18 7 1
+19 8 1
+19 12 1
+19 17 1

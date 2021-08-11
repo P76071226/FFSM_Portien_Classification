@@ -1,0 +1,11 @@
+# minsup
+1
+# graph
+G_portein_file\Serpin\1JMJ.pdb
+# node ID, label
+0 F
+1 F
+2 I
+3 L
+4 L
+# node ID1, node ID2, number of bounds

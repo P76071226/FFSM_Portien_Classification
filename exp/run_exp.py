@@ -3,7 +3,7 @@ from workflow import flow
 import os
 import csv
 
-DATA_PATH = 'db_formate'
+DATA_PATH = 'db_format'
 OUTPUT_FILE = 'exp_result.csv'
 
 if __name__ == '__main__':

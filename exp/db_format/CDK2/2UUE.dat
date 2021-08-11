@@ -1,0 +1,50 @@
+# minsup
+1
+# graph
+G_portein_file\CDK2\2UUE.pdb
+# node ID, label
+0 D
+1 E
+2 E
+3 E
+4 E
+5 E
+6 G
+7 G
+8 G
+9 G
+10 P
+11 T
+12 T
+13 T
+14 V
+15 V
+16 V
+17 Y
+18 Y
+# node ID1, node ID2, number of bounds
+4 0 1
+6 1 1
+7 1 1
+7 6 1
+8 3 1
+9 3 1
+9 8 1
+11 1 1
+11 6 1
+11 7 1
+12 3 1
+12 8 1
+12 9 1
+13 0 1
+13 4 1
+14 2 1
+15 10 1
+17 1 1
+17 6 1
+17 7 1
+17 11 1
+18 3 1
+18 8 1
+18 9 1
+18 12 1

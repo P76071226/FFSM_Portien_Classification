@@ -1,0 +1,9 @@
+# minsup
+1
+# graph
+G_portein_file\Serine-proteases\2PZD.pdb
+# node ID, label
+0 A
+1 I
+# node ID1, node ID2, number of bounds
+1 0 1

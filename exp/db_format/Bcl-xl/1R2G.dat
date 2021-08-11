@@ -1,0 +1,45 @@
+# minsup
+1
+# graph
+G_portein_file\Bcl-xl\1R2G.pdb
+# node ID, label
+0 A
+1 D
+2 F
+3 I
+4 M
+5 P
+6 Q
+7 R
+8 R
+9 S
+10 S
+11 Y
+# node ID1, node ID2, number of bounds
+1 0 1
+2 0 1
+2 1 1
+4 3 1
+5 3 1
+5 4 1
+6 3 1
+6 4 1
+6 5 1
+7 0 1
+7 2 1
+8 0 1
+8 1 1
+8 2 1
+8 7 1
+9 3 1
+9 4 1
+9 6 1
+10 0 1
+10 1 1
+10 2 1
+10 7 1
+10 8 1
+11 0 1
+11 2 1
+11 7 1
+11 8 1

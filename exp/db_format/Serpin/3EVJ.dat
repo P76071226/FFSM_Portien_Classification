@@ -1,0 +1,29 @@
+# minsup
+1
+# graph
+G_portein_file\Serpin\3EVJ.pdb
+# node ID, label
+0 E
+1 E
+2 G
+3 I
+4 K
+5 K
+6 N
+7 P
+8 Q
+9 S
+# node ID1, node ID2, number of bounds
+1 0 1
+2 0 1
+2 1 1
+5 1 1
+7 3 1
+8 1 1
+8 2 1
+8 5 1
+9 0 1
+9 1 1
+9 2 1
+9 5 1
+9 8 1
