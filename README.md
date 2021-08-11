@@ -9,7 +9,7 @@ Portien Classfication based on FFSM graph mining.
 
 
 ## 前處理：
-先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式。如已處理完的資料夾`db_formate`
+先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式。如已處理完的資料夾`db_format`
 
 
 ```
@@ -21,6 +21,9 @@ FOR EXAMPLE:
 ./PDBformater.o 4n41.pdb > 4n41.dat
 ```
 
+### 批次前處理:
+1. 先將不同蛋白質的class的pdb檔案放在`portein_file/<class name>/<pdb file>`
+2. 執行`python3 format_all.py`
 
 ## 實驗執行(default dataset:db_formate)
 輸出各**class平均時間**與**預測準確度**
