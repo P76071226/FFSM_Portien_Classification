@@ -1,7 +1,7 @@
 import subprocess
 import sys
 import os
-import classify
+from classify import clas_v2
 
 
 def flow(inpdb):
@@ -14,7 +14,16 @@ def flow(inpdb):
 
     (stdoutput, erroutput) = q.communicate()
 
-    predict = classify.clas()
+    #predict = classify.clas()
+    last_concat_str = ''
+    with open("subgraph.txt", "r") as f:
+        for line in f.readlines():
+            code = (line.split(':')[1].strip())
+            if len(code) > 1:
+                last_concat_str += code[-1]
+
+    print(last_concat_str)
+    predict = clas_v2(last_concat_str)
 
     mapping = {
         'Argo': ['4n41.dat', '4n47.dat', '4w5o.dat', '4z4c.dat', '4z4d.dat', '4z4f.dat', '5awh.dat', '5g5s.dat', '5g5t.dat', '5i4a.dat', '5js1.dat', '5ki6.dat', '5t7b.dat', '5ux0.dat'],
@@ -33,7 +42,8 @@ def flow(inpdb):
         if os.path.basename(inpdb) in mapping[key]:
             truth = key
 
-    os.remove('subgraph.txt')
+    #os.remove('subgraph.txt')
+    print(predict, truth)
     return predict, truth
 
 

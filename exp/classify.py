@@ -36,3 +36,32 @@ def clas():
                     outclass = class_name
                     longest_common_code = string
     return outclass
+    
+def clas_v2(code_str):
+    if code_str[0:4] == 'TTTT':
+        return 'bcl_xl'
+    elif code_str.count('C') == 5:
+        return 'bcl-2'
+    elif code_str[0:5] == 'MMMMM':
+        return 'E2F'
+    elif 'CAAAA' in code_str:
+        return 'Globin'
+    elif ('DDD' in code_str):
+        if code_str[code_str.index('DDD')+3] != 'D':# DDD not the last part
+            return 'Histone'
+        else:
+            return 'Argo'
+    elif code_str[0:5] == 'YYYYY':
+        return 'HSP'
+    elif 'FFF' in code_str:
+        return 'pkd'
+    elif code_str.count('Y') == 2:
+        return 'serpin'
+    elif 'KKKK' in code_str or 'AAAA' in code_str:
+        return 'serine'
+    else:
+        return 'Argo'
+
+if __name__ == '__main__':
+    print(clas_v2('YYRRIIDIIRR'))
+
