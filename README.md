@@ -1,43 +1,38 @@
 # Portien classfication
+Portien Classfication based on FFSM graph mining.
+
 
 ## 建置環境
 1. `make`
 2. `g++ -o PDBformater.o PDBformater.cpp`
 
+
+
 ## 前處理：
-先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式
-![](figs/1.png)
+先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式。如已處理完的資料夾`db_formate`
 
-P1為以FFSM演算法的執行檔，將所有的.dat檔案讀入得到各個子圖的code
-再取每個class 最長的code 來代表此class的最大子圖並存於"lcs_all_class_dict"，以python dictionary type儲存。
-## 執行（分類）
-Input: a.dat
-Output: *class name*, *longest common string*
 
-以"workflow.sh"為執行腳本
-進到工作目錄(/exp)後使用
-
-1. `cd exp`
-2. `./workflow.sh a.dat`
-
-即可得到所屬於的class以及代表最大子圖的code
-
-### 測量單次執行時間
 ```
-$time ./workflow.sh a.dat
+./PDBformater.o <pdf_file_path> > <dat_file_path>
 ```
 
-## 實驗
-輸出class平均時間 與 預測準確度
+FOR EXAMPLE:
+```
+./PDBformater.o 4n41.pdb > 4n41.dat
+```
+
+
+## 實驗執行(default dataset:db_formate)
+輸出各**class平均時間**與**預測準確度**
 輸出檔名`exp_result.csv`
-
+執行以下指令:
 1. `cd exp`
 2. `python3 run_exp.py`
 
 
-## 執行說明：
-一開始會先將a.dat依同樣的方式取得各個子圖的code存於"subgraph.txt"
-在"classify.py"，將前者最長的code和在“lcs_all_class_dict"各個代表class的最長code，利用LCS演算法取得最大的子圖(longest code)和所在的類別
+## 執行流程說明：
+在run_exp.py中
+將P1（FFSM演算法的執行檔）以.dat檔案為輸入取得各個子圖的code存於`subgraph.txt`,並透過`classfy.py`檔案以LCS概念來做分類預測
 
 ## Statement
 
