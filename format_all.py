@@ -21,4 +21,4 @@ if __name__ == '__main__':
                 filepath = os.path.join(dir_name, file)
                 print('Processing %s' % filepath, flush=True)
                 with open(targetpath, 'w') as f:
-                    subprocess.run(['PDBformater.exe', filepath], stdout=f)
+                    subprocess.run(['./PDBformater.exe', filepath], stdout=f)
