@@ -37,7 +37,11 @@ def clas():
                     longest_common_code = string
     return outclass
     
+global threshold_type
+    
 def clas_v2(code_str):
+    '''
+    # for threshold = 15, B-factor = 60
     if code_str[0:4] == 'TTTT':
         return 'bcl_xl'
     elif code_str.count('C') == 5:
@@ -61,6 +65,31 @@ def clas_v2(code_str):
         return 'serine'
     else:
         return 'Argo'
+    '''
+    # for threshold = 10, B-factor = 50
+    if not code_str:
+        return ''
+    elif 'FEA' in code_str:
+        return 'bcl_xl'
+    elif 'CP' in code_str:
+        return 'bcl-2'
+    elif code_str[0] == 'Y':
+        return 'E2F'
+    elif 'DAAAAAA' in code_str:
+        return 'Globin'        
+    elif code_str[0:2] == 'RR':
+        return 'HSP'
+    elif code_str[0:3] == 'FFA':
+        return 'pkd'
+    elif 'LLL' in code_str:
+        return 'serine'
+    elif 'KKK' in code_str or 'DDD' in code_str:
+        return 'serpin'
+    elif 'DD' in code_str:
+        return 'Histone'
+    else:
+        return 'Argo'
+    
 
 if __name__ == '__main__':
     print(clas_v2('YYRRIIDIIRR'))
