@@ -9,7 +9,17 @@ Portien Classfication based on FFSM graph mining.
 
 
 ## 前處理：
-先將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式。如已處理完的資料夾`db_format`
+定義檔案`parameters.txt`中的B_FACTOR與THRESHOLD參數。
+範例:
+```
+B_FACTOR
+50
+THRESHOLD
+10
+```
+以上範例B_FACTOR為50，THRESHOLD為10。
+
+再將所有不同蛋白質的class的pdb檔案，利用PDBformater轉換成.dat檔案以符合FFSM讀入的形式。如已處理完的資料夾`db_format`
 
 
 ```

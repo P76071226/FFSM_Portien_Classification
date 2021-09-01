@@ -4,8 +4,7 @@
 #include <vector>
 
 #define LINE_LENGTH 90
-#define B_FACTOR 20
-#define THRESHOLD 10
+#define CONFIG_FILE "parameters.txt"
 #define MINSUP 1
 
 using namespace std;
@@ -28,6 +27,23 @@ int main(int argc, char *argv[]) {
         cout << "Usage:" << endl;
         cout << argv[0] << " <pdb file>" << endl;
         return 1;
+    }
+
+    int B_FACTOR = 60;
+    int THRESHOLD = 15;
+    ifstream config_file;
+    config_file.open(CONFIG_FILE);
+    while (config_file.good()) {
+        string line;
+        getline(config_file, line);
+        if (line.compare("B_FACTOR") == 0) {
+            getline(config_file, line);
+            B_FACTOR = atoi(line.c_str());
+        }
+        if (line.compare("THRESHOLD") == 0) {
+            getline(config_file, line);
+            THRESHOLD = atoi(line.c_str());
+        }
     }
 
     char *path = argv[1];

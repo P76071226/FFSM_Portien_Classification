@@ -37,3 +37,4 @@ portein_file/
 P1
 subgraph.txt
 *.csv
+.vscode/

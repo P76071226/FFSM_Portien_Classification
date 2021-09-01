@@ -39,58 +39,58 @@ def clas():
     
 global threshold_type
     
-def clas_v2(code_str):
-    '''
-    # for threshold = 15, B-factor = 60
-    if code_str[0:4] == 'TTTT':
-        return 'bcl_xl'
-    elif code_str.count('C') == 5:
-        return 'bcl-2'
-    elif code_str[0:5] == 'MMMMM':
-        return 'E2F'
-    elif 'CAAAA' in code_str:
-        return 'Globin'
-    elif ('DDD' in code_str):
-        if code_str[code_str.index('DDD')+3] != 'D':# DDD not the last part
+def clas_v2(code_str, BFACTOR, THRESHOLD):
+    if BFACTOR == 60 and THRESHOLD == 15:
+        # for threshold = 15, B-factor = 60
+        if code_str[0:4] == 'TTTT':
+            return 'bcl_xl'
+        elif code_str.count('C') == 5:
+            return 'bcl-2'
+        elif code_str[0:5] == 'MMMMM':
+            return 'E2F'
+        elif 'CAAAA' in code_str:
+            return 'Globin'
+        elif ('DDD' in code_str):
+            if code_str[code_str.index('DDD')+3] != 'D':# DDD not the last part
+                return 'Histone'
+            else:
+                return 'Argo'
+        elif code_str[0:5] == 'YYYYY':
+            return 'HSP'
+        elif 'FFF' in code_str:
+            return 'pkd'
+        elif code_str.count('Y') == 2:
+            return 'serpin'
+        elif 'KKKK' in code_str or 'AAAA' in code_str:
+            return 'serine'
+        else:
+            return 'Argo'
+    elif BFACTOR == 50 and THRESHOLD == 10:
+        # for threshold = 10, B-factor = 50
+        if not code_str:
+            return ''
+        elif 'FEA' in code_str:
+            return 'bcl_xl'
+        elif 'CP' in code_str:
+            return 'bcl-2'
+        elif code_str[0] == 'Y':
+            return 'E2F'
+        elif 'DAAAAAA' in code_str:
+            return 'Globin'        
+        elif code_str[0:2] == 'RR':
+            return 'HSP'
+        elif code_str[0:3] == 'FFA':
+            return 'pkd'
+        elif 'LLL' in code_str:
+            return 'serine'
+        elif 'KKK' in code_str or 'DDD' in code_str:
+            return 'serpin'
+        elif 'DD' in code_str:
             return 'Histone'
         else:
             return 'Argo'
-    elif code_str[0:5] == 'YYYYY':
-        return 'HSP'
-    elif 'FFF' in code_str:
-        return 'pkd'
-    elif code_str.count('Y') == 2:
-        return 'serpin'
-    elif 'KKKK' in code_str or 'AAAA' in code_str:
-        return 'serine'
-    else:
-        return 'Argo'
-    '''
-    # for threshold = 10, B-factor = 50
-    if not code_str:
-        return ''
-    elif 'FEA' in code_str:
-        return 'bcl_xl'
-    elif 'CP' in code_str:
-        return 'bcl-2'
-    elif code_str[0] == 'Y':
-        return 'E2F'
-    elif 'DAAAAAA' in code_str:
-        return 'Globin'        
-    elif code_str[0:2] == 'RR':
-        return 'HSP'
-    elif code_str[0:3] == 'FFA':
-        return 'pkd'
-    elif 'LLL' in code_str:
-        return 'serine'
-    elif 'KKK' in code_str or 'DDD' in code_str:
-        return 'serpin'
-    elif 'DD' in code_str:
-        return 'Histone'
-    else:
-        return 'Argo'
     
 
 if __name__ == '__main__':
-    print(clas_v2('YYRRIIDIIRR'))
+    print(clas_v2('YYRRIIDIIRR', 60, 15))
 
